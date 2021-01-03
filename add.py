@@ -17,21 +17,29 @@ def add(lol1, lol2):
     [[2, -1, 3], [-3, 3, -3], [5, -6, 7]]
     """
 
-    new_lst = []
+    outer = []
 
-    # for a pair of lists
+    # for variable number of lists
     for i in range(len(lol1)):
+        inner = []
         for j in range(len(lol2)):
-            new_lst.append([lol1[i][j] + lol2[i][j]])
-    return new_lst
+            inner.append(
+                lol1[i][j] + lol2[i][j]
+                )
+        outer.append(inner)
+    return outer
 
     
 if __name__ == '__main__':
-#    lst1 = [1, -2]
-#    lst2 = [2, -1]
-#    x = add(lst1, lst2)
-#    print(x)
-
     matrix1 = [[1, -2], [-3, 4]]
     matrix2 = [[2, -1], [0, -1]]
-    print(add(matrix1, matrix2))
+    print("Expected:\n\t[[3, -3], [-3, 3]]")
+    print(f"Got:\n\t{add(matrix1, matrix2)}")
+
+    print()
+
+    matrix1 = [[1, -2, 3], [-4, 5, -6], [7, -8, 9]]
+    matrix2 = [[1, 1, 0], [1, -2, 3], [-2, 2, -2]]
+    print("Expected:\n\t[[2, -1, 3], [-3, 3, -3], [5, -6, 7]]")
+    print(f"Got:\n\t{add(matrix1, matrix2)}")
+
