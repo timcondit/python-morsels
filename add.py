@@ -17,15 +17,12 @@ def add(lol1, lol2):
     [[2, -1, 3], [-3, 3, -3], [5, -6, 7]]
     """
 
+    # handles variable number of lists
     outer = []
-
-    # for variable number of lists
-    for i in range(len(lol1)):
+    for first, second in zip(lol1, lol2):
         inner = []
-        for j in range(len(lol2)):
-            inner.append(
-                lol1[i][j] + lol2[i][j]
-                )
+        for fst, scd in zip(first, second):
+            inner.append(fst + scd)
         outer.append(inner)
     return outer
 
