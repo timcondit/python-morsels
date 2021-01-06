@@ -1,7 +1,7 @@
 # https://www.pythonmorsels.com/exercises/cb8fbdd52cf14f8cb31df4f06343cccf/
 
 def add(lol1, lol2):
-    # handles variable number of lists
+    # handles variable number of lists (but *not* variable number of lists of lists)
     outer = []
     for first, second in zip(lol1, lol2):
         inner = []
