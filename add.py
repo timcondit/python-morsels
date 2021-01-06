@@ -1,16 +1,15 @@
 # https://www.pythonmorsels.com/exercises/cb8fbdd52cf14f8cb31df4f06343cccf/
 
-def add(lol1, lol2):
-    # handles variable number of lists (but *not* variable number of lists of lists)
+def add(m1, m2):
     outer = []
-    for first, second in zip(lol1, lol2):
-        inner = []
-        for fst, scd in zip(first, second):
-            inner.append(fst + scd)
-        outer.append(inner)
+    for z1, z2 in zip(m1, m2):
+        outer.append([
+            iz1 + iz2
+            for iz1, iz2 in zip(z1, z2)
+            ])
     return outer
 
-    
+
 if __name__ == '__main__':
     matrix1 = [[1, -2], [-3, 4]]
     matrix2 = [[2, -1], [0, -1]]
@@ -19,8 +18,8 @@ if __name__ == '__main__':
 
     print()
 
-    matrix1 = [[1, -2, 3], [-4, 5, -6], [7, -8, 9]]
-    matrix2 = [[1, 1, 0], [1, -2, 3], [-2, 2, -2]]
+    matrix3 = [[1, -2, 3], [-4, 5, -6], [7, -8, 9]]
+    matrix4 = [[1, 1, 0], [1, -2, 3], [-2, 2, -2]]
     print("Expected:\n\t[[2, -1, 3], [-3, 3, -3], [5, -6, 7]]")
-    print(f"Got:\n\t{add(matrix1, matrix2)}")
+    print(f"Got:\n\t{add(matrix3, matrix4)}")
 
