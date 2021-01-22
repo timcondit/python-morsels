@@ -14,7 +14,7 @@
 import re
 
 def count_words(words):
-    regex = r'\w+'
+    regex = r"\w+?'\w+|\w+"
     wordslist = re.findall(regex, words)
     #wordslist = words.split(" ")
     wordsdict = {}
@@ -28,7 +28,7 @@ def count_words(words):
 
 
 if __name__ == "__main__":
-    count_words("oh what a day what a lovely day")
-    count_words("Oh what a day what a lovely day")
-    count_words("Oh what a day, what a lovely day!")
-    count_words("don't stop believing")
+    print(count_words("oh what a day what a lovely day"))
+    print(count_words("Oh what a day what a lovely day"))
+    print(count_words("Oh what a day, what a lovely day!"))
+    print(count_words("don't stop believing"))
