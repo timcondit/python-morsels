@@ -19,36 +19,36 @@ def tail(seq, num: int):
     elif num > len(seq):
         return seq
     else:
-        return seq[(len(seq) - num):]
+        return list(seq[(len(seq) - num):])
 
 
 if __name__ == '__main__':
-    print(list(tail([1, 2], 1)))
+    print(tail([1, 2], 1))
     print()
 
-    print(list(tail([1, 2], 2)))
+    print(tail([1, 2], 2))
     print()
 
-    print(list(tail("hello", 0)))
-    print(list(tail([1, 2, 3, 4, 5], 0)))
-    print(list(tail((6, 7, 8, 9, 0), 0)))
+    print(tail("hello", 0))
+    print(tail([1, 2, 3, 4, 5], 0))
+    print(tail((6, 7, 8, 9, 0), 0))
     print()
 
-    print(list(tail("hello", 1)))
-    print(list(tail([1, 2, 3, 4, 5], 1)))
-    print(list(tail((6, 7, 8, 9, 0), 1)))
+    print(tail("hello", 1))
+    print(tail([1, 2, 3, 4, 5], 1))
+    print(tail((6, 7, 8, 9, 0), 1))
     print()
 
-    print(list(tail("hello", 2)))
-    print(list(tail([1, 2, 3, 4, 5], 2)))
-    print(list(tail((6, 7, 8, 9, 0), 2)))
+    print(tail("hello", 2))
+    print(tail([1, 2, 3, 4, 5], 2))
+    print(tail((6, 7, 8, 9, 0), 2))
     print()
 
-    print(list(tail("hello", -2)))
-    print(list(tail([1, 2, 3, 4, 5], -2)))
-    print(list(tail((6, 7, 8, 9, 0), -2)))
+    print(tail("hello", -2))
+    print(tail([1, 2, 3, 4, 5], -2))
+    print(tail((6, 7, 8, 9, 0), -2))
     print()
 
-    print(list(tail("hello", 7)))
-    print(list(tail([1, 2, 3, 4, 5], 7)))
-    print(list(tail((6, 7, 8, 9, 0), 7)))
+    print(tail("hello", 7))
+    print(tail([1, 2, 3, 4, 5], 7))
+    print(tail((6, 7, 8, 9, 0), 7))
