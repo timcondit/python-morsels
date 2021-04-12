@@ -12,14 +12,20 @@
 # See if you can make your function relatively memory efficient (if you're looping over a very long
 # iterable, don't store the entire thing in memory).
 
+# TODO Finish test_iterator
 
 def tail(seq, num: int):
+    sequence_len = len(list(seq))
+    print(f"sequence_len, num: {sequence_len, num}")
     if num <= 0:
         return []
-    elif num > len(seq):
-        return seq
+    elif num > sequence_len:
+        return list(seq)
     else:
-        return list(seq[(len(seq) - num):])
+        # print(f"sequence_len: {sequence_len}")
+        return list(seq[(sequence_len - num):])
+
+        # self.assertEqual(tail(nums, 2), [9, 16])  # Consuming the generator
 
 
 if __name__ == '__main__':
